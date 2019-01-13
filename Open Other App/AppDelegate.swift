@@ -44,3 +44,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/*
+ Going Primary to secondary
+ 
+ Primary App
+ 
+ Info.plist
+ LSApplicationQueriesSchemes Array
+ item 0 - secondaryApp
+ 
+ in button action method -
+ let application = UIApplication.shared
+ let secondAppPath = "secondaryApp://"
+ let appUrl = URL(string: secondAppPath)!
+ let websiteUrl = URL(string: "https://www.google.com")!
+ 
+ if application.canOpenURL(appUrl) {
+ application.open(appUrl, options: [:], completionHandler: nil)
+ }
+ else{
+ application.open(websiteUrl)
+ }
+
+ 
+  Secondary App
+ 
+ Info.plist
+ URLTypes
+ item 0 enter
+ URL Schemes -
+ item0 - secondaryApp
+ 
+ 
+ 
+ */
